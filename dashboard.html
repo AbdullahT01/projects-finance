@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Wise</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="mainProgram.css">
+
+</head>
+<body>
+    <div class="container"> <!-- This is the container for the navigation bar  -->
+        <aside>
+            <div class="top"> <!-- This is the div for the top of the navigation bar  -->
+
+                <div class="logo">
+                   <img src="/images/logo.png"> 
+                     <h2>Wealth <span class="danger">Wise</span></h2>
+                </div>
+
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp"> close </span> <!-- Took this from google fonts  -->
+                </div>
+
+            </div>
+            
+       
+
+          <div class="sidebar" >
+            <a class="sideBTN active" >
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+            </a>
+
+            <a class="sideBTN" id="sideBTN-Income&Expense">
+                <span class="material-icons-sharp"> payments </span>
+                <h3>Income & Expense</h3>
+            </a>
+
+            <a  class="sideBTN">
+                <span class="material-icons-sharp"> payment </span>
+                <h3>Upcoming Bills</h3>
+                <span class="message-count">6</span>
+            </a>
+
+            <a  class="sideBTN">
+                <span class="material-icons-sharp"> manage_accounts </span>
+                <h3>Account Management</h3>
+            </a>
+
+
+            <a href="index.html" class="sideBTN">
+                <span class="material-icons-sharp"> logout </span>
+                <h3>Logout</h3>
+            </a>
+
+
+
+          </div>
+       </aside>
+<!------------------------------------------------------------------------------------------------------------------------->
+       <main class="main">
+        <h1>Dashboard</h1>
+
+        <div class="date">
+            <input type="date">
+        </div>
+
+        <div class="insights">
+
+            <div class="sales">
+
+                <span class="material-icons-sharp"> payment </span>
+
+                <div class="middle">
+                    
+                    <div class="left">
+                        <h3>Total Bills Payed</h3>
+                        <h1>1436,12</h1>
+                    </div>
+                    <div class="progress">
+                        <svg>
+                            <circle cx ='38' cy ='38' r ='36' >
+
+                            </circle>
+                        </svg>
+
+                        <div class="number">
+                            <p>81%</p>
+                        </div>
+                    </div>
+                </div>
+                <small class="text-muted"> This Month</small>
+            </div>
+            <!------------------------------------------END of bills payed------------------------------------------------------------>
+
+            <div class="expenses">
+
+                <span class="material-icons-sharp"> bar_chart </span>
+
+                <div class="middle">
+                    
+                    <div class="left">
+                        <h3>EXPENSES</h3>
+                        <h1>1436,12</h1>
+                    </div>
+                    <div class="progress">
+                        <svg>
+                            <circle cx ='38' cy ='38' r ='36' >
+
+                            </circle>
+                        </svg>
+
+                        <div class="number">
+                            <p>62%</p>
+                        </div>
+                    </div>
+                </div>
+                <small class="text-muted"> This Month</small>
+            </div>
+            <!---------------------------------------------END of EXPENSES------------------------------------------------------------>
+
+            <div class="income">
+
+                <span class="material-icons-sharp">trending_up</span>
+
+                <div class="middle">
+                    
+                    <div class="left">
+                        <h3>INCOME</h3>
+                        <h1>1436,12</h1>
+                    </div>
+                    <div class="progress">
+                        <svg>
+                            <circle cx ='38' cy ='38' r ='36' >
+
+                            </circle>
+                        </svg>
+
+                        <div class="number">
+                            <p>44%</p>
+                        </div>
+                    </div>
+                </div>
+                <small class="text-muted"> This Month</small>
+            </div>
+            <!------------------------------------------------END OF INCOME------------------------------------------------------------>
+        </div>
+        <!------------------------------------------------END OF INSIGHTS------------------------------------------------------------>
+
+        <div class="recent-cashFlow">
+            <h2>Recent Cash Flow</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment Method</th>
+                        <th>Payment Amount</th>
+                        <th>Payment Type</th>
+                        <th>Payment Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Youtube AD Revenue</td>
+                        <td>116.32$</td>
+                        <td>Income</td>
+                        <td>2023-07-20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Youtube AD Revenue</td>
+                        <td>116.32$</td>
+                        <td>Income</td>
+                        <td>2023-07-20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Youtube AD Revenue</td>
+                        <td>116.32$</td>
+                        <td>Income</td>
+                        <td>2023-07-20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Youtube AD Revenue</td>
+                        <td>116.32$</td>
+                        <td>Income</td>
+                        <td>2023-07-20</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#">Show All</a>
+        </div>
+      </main>
+    <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active"> light_mode </span>
+                <span class="material-icons-sharp"> dark_mode </span>
+            </div>
+
+            <div class="profile">
+                <div class="info">
+                    <p>Hey, <b>Abdullah</b></p>
+                    <small class="text-muted">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="/images/pfp.png" alt="">
+                </div>
+                
+
+            </div>
+        </div>
+
+        
+        <!------------------------------------------------END OF INSIGHTS------------------------------------------------------------>
+        <div class="savings-analytics">
+            <h2>Savings-Analytics</h2>
+
+           <div class="item online">
+            <div class="icon">
+                <span class="material-icons-sharp"> savings </span>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>TODAY</h3>
+                   
+                </div>
+                <h5 class="success">+2%</h5>
+                <h3>126.67$</h3>
+            </div>
+          </div>
+
+            <div class="item offline">
+                <div class="icon"><span class="material-icons-sharp"> energy_savings_leaf</span></div>
+            
+            <div class="right">
+                <div class="info">
+                    <h3>THIS MONTH</h3>
+                   
+                </div>
+                <h5 class="success">+12%</h5>
+                <h3>126.67$</h3>
+            </div>
+          </div>
+
+            <div class="item customer">
+                <div class="icon"><span class="material-icons-sharp"> account_balance </span></div>
+            
+            <div class="right">
+                <div class="info">
+                    <h3>THIS YEAR</h3>
+                    
+                </div>
+                <h5 class="success">+2%</h5>
+                <h3>126.67$</h3>
+            </div>
+         </div>
+
+        </div>
+
+    </div>
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>

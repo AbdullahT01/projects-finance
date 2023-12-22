@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+    <link rel="stylesheet" href="login.css">
+    <title>Wealth Wise</title>
+</head>
+<body>
+    
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>CREATE ACCOUNT</h1>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+
+                <a href="dashboard.html"><button type="button">SIGN UP</button></a>
+
+            </form>
+        </div>
+
+        <div class="form-container log-in">
+            <form>
+                <h1>LOGIN</h1>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+           
+                <a href="dashboard.html"><button type="button">LOG IN</button></a>
+
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Are you already a member?</p>
+                    <p>Please put in your log in credentials to access your account</p>
+                    <button class= "hidden" id="login">LOG IN</button>
+
+                </div>
+
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Please put your personal details to access your finance manager</p>
+                    <button class= "hidden" id="register">SIGN UP</button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
