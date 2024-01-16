@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
     rel="stylesheet">
     <link rel="stylesheet" href="mainProgram.css">
-
 </head>
 <body>
     <div class="container"> <!-- This is the container for the navigation bar  -->
@@ -28,8 +27,8 @@
             
        
 
-          <div class="sidebar" >
-            <a class="sideBTN active" >
+          <div class="sidebar">
+            <a class="sideBTN active" id="sideBTN-Dashboard" >
             <span class="material-icons-sharp"> dashboard </span>
             <h3>Dashboard</h3>
             </a>
@@ -39,13 +38,13 @@
                 <h3>Income & Expense</h3>
             </a>
 
-            <a  class="sideBTN">
+            <a  class="sideBTN" id="upcomingBillsBtn">
                 <span class="material-icons-sharp"> payment </span>
                 <h3>Upcoming Bills</h3>
                 <span class="message-count">6</span>
             </a>
 
-            <a  class="sideBTN">
+            <a  class="sideBTN" id="AccountManagementBtn">
                 <span class="material-icons-sharp"> manage_accounts </span>
                 <h3>Account Management</h3>
             </a>
@@ -61,7 +60,168 @@
           </div>
        </aside>
 <!------------------------------------------------------------------------------------------------------------------------->
+   
+
+<div class="incAndExp blanker">
+    <h1>Income and Expenses</h1>
+ <div class="formContainerInc">
+    <form id="expenseForm">
+        <select id="incomeExpense">
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+        </select>
+        <input type="text" id="title" placeholder="Title">
+        <input type="number" id="amount" placeholder="Amount $" step="0.01">
+        <input type="date" id="date">
+        <button type="submit" id="submitBtn">INPUT</button>
+    </form>
+    
+  </div>
+
+  <div class="recentFlow">
+    <h2>Recent Flow</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Payment Method</th>
+                <th>Payment Amount</th>
+                <th>Payment Type</th>
+                <th>Payment Date</th>
+            </tr>
+        </thead>
+   
+
+    <tbody>
+        <tr>
+            <td>Youtube AD Revenue</td>
+            <td>116.32$</td>
+            <td>Income</td>
+            <td>2023-07-20</td>
+            <td><button class="deleteBtn">Delete</button></td>
+            
+        </tr>
+        
+    </tbody>
+
+
+  </table>
+  </div>
+
+
+
+</div>
+
+
+<div class="accountManagmentGlobal blanker">
+<div class="accountManagment">
+
+    <div class="updateInfoContainer">
+
+     <h2>Update Personal Info</h3>
+     <form id="personalInfoUpdate" >
+        <input type="text" placeholder="New Name" id="newName">
+        <input type="text" placeholder="New E-mail" id="newEmail">
+        <input type="text" placeholder="New Password" id="newPassword">
+        <button type="submit">Update</button>
+     </form>
+
+    </div>
+
+    <div class="updateGoalsContainer">
+
+        <h2>Update Personal Goals</h3>
+        <form id="updateGoalsUpdate">
+           <input type="number" placeholder="New Goal" id="newGoal">
+           <input type="number" placeholder="New Monthly Budget" id="newBudget">
+           <button type="submit">Update</button>
+        </form>
+   
+       </div>
+</div>
+</div>
+<div class="calender blanker">
+<div class="calendarContainer">
+
+  <div class="addBillContainer">
+    <form id="addBill" >
+        <select id="billFrequency">
+            <option value="bi-Weekly">Bi-Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <input type="text" placeholder="Name" id="billName" required>
+        <input type="number" placeholder="Amount" id="billAmount" required>
+        <input type="date" placeholder="date" id="billDate" required>
+        <button type="submit">Input</button>
+     </form>
+
+     
+  </div>
+
+<div class="recentFlowMonthlyBill">
+    <h2>Monthly Bills</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Payment Name</th>
+                <th>Upcoming Payment Date</th>
+                <th>Payment Amount</th>
+            </tr>
+        </thead>
+   
+
+    <tbody>
+        <tr>
+            <td>Youtube Subscription</td>
+            <td>2023-07-20</td>
+            <td>3.32$</td>
+            <td><button class="deleteBtn">Delete</button></td>
+        </tr>
+        
+    </tbody>
+
+
+  </table>
+</div>
+
+<div class="recentFlowBiWeeklyBill">
+    <h2>Bi-Weekly Bills</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Payment Name</th>
+                <th>Upcoming Payment Date</th>
+                <th>Payment Amount</th>
+            </tr>
+        </thead>
+   
+
+    <tbody>
+        <tr>
+            <td>Youtube Subscription</td>
+            <td>2023-07-20</td>
+            <td>3.32$</td>
+            <td><button class="deleteBtn">Delete</button></td>
+        </tr>
+        
+    </tbody>
+
+
+  </table>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+
        <main class="main">
+
         <h1>Dashboard</h1>
 
         <div class="date">
@@ -70,7 +230,7 @@
 
         <div class="insights">
 
-            <div class="sales">
+            <div class="bills">
 
                 <span class="material-icons-sharp"> payment </span>
 
@@ -78,7 +238,7 @@
                     
                     <div class="left">
                         <h3>Total Bills Payed</h3>
-                        <h1>1436,12</h1>
+                        <h1 id="totalBillsPaid">1436,12</h1>
                     </div>
                     <div class="progress">
                         <svg>
@@ -88,7 +248,7 @@
                         </svg>
 
                         <div class="number">
-                            <p>81%</p>
+                            <p id="percentageOfBillsPayed">81%</p>
                         </div>
                     </div>
                 </div>
@@ -104,7 +264,7 @@
                     
                     <div class="left">
                         <h3>EXPENSES</h3>
-                        <h1>1436,12</h1>
+                        <h1 id="totalExpenses">1436,12</h1>
                     </div>
                     <div class="progress">
                         <svg>
@@ -114,7 +274,7 @@
                         </svg>
 
                         <div class="number">
-                            <p>62%</p>
+                            <p id="expensePercentage">62%</p>
                         </div>
                     </div>
                 </div>
@@ -130,17 +290,17 @@
                     
                     <div class="left">
                         <h3>INCOME</h3>
-                        <h1>1436,12</h1>
+                        <h1 id="totalIncomes">1436,12</h1>
                     </div>
                     <div class="progress">
                         <svg>
-                            <circle cx ='38' cy ='38' r ='36' >
+                            <circle cx ='38' cy ='38' r ='36' id="incomeCircle">
 
                             </circle>
                         </svg>
 
                         <div class="number">
-                            <p>44%</p>
+                            <p id="incomePercentage">44%</p>
                         </div>
                     </div>
                 </div>
@@ -162,33 +322,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Youtube AD Revenue</td>
-                        <td>116.32$</td>
-                        <td>Income</td>
-                        <td>2023-07-20</td>
-                    </tr>
-
-                    <tr>
-                        <td>Youtube AD Revenue</td>
-                        <td>116.32$</td>
-                        <td>Income</td>
-                        <td>2023-07-20</td>
-                    </tr>
-
-                    <tr>
-                        <td>Youtube AD Revenue</td>
-                        <td>116.32$</td>
-                        <td>Income</td>
-                        <td>2023-07-20</td>
-                    </tr>
-
-                    <tr>
-                        <td>Youtube AD Revenue</td>
-                        <td>116.32$</td>
-                        <td>Income</td>
-                        <td>2023-07-20</td>
-                    </tr>
+                    
+                   
                 </tbody>
             </table>
             <a href="#">Show All</a>
@@ -207,7 +342,7 @@
 
             <div class="profile">
                 <div class="info">
-                    <p>Hey, <b>Abdullah</b></p>
+                    <p>Hey, <b id="mainProgramName">User</b></p>
                     <small class="text-muted">Admin</small>
                 </div>
                 <div class="profile-photo">
@@ -232,8 +367,7 @@
                     <h3>TODAY</h3>
                    
                 </div>
-                <h5 class="success">+2%</h5>
-                <h3>126.67$</h3>
+                <h3 class="daySavingsPercentage success" id="daySavings">126.67$</h3>
             </div>
           </div>
 
@@ -245,8 +379,8 @@
                     <h3>THIS MONTH</h3>
                    
                 </div>
-                <h5 class="success">+12%</h5>
-                <h3>126.67$</h3>
+                
+                <h3 class="monthSavingsPercentage success" id="monthsSavings">126.67$</h3>
             </div>
           </div>
 
@@ -258,17 +392,23 @@
                     <h3>THIS YEAR</h3>
                     
                 </div>
-                <h5 class="success">+2%</h5>
-                <h3>126.67$</h3>
+                
+                <h3 class="yearSavingsPercentage success" id="yearSavings">126.67$</h3>
             </div>
          </div>
 
         </div>
 
     </div>
+
+    
     </div>
     
-
+    
     <script src="index.js"></script>
+    <script src="navBarControls.js"></script>
+    <script src="tableHnadling.js"></script>
+    <script src="informationUpdate.js"></script>
+    <script src="bills.js"></script>
 </body>
 </html>

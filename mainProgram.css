@@ -30,9 +30,9 @@
     list-style: none;
     box-sizing: border-box;
 }
+
 .blanker{
-    transition: all 100ms ease;
-    opacity: 0;
+    display: none;
 }
 
 
@@ -267,7 +267,7 @@ main{
     
     margin-top: 1.4rem;
     margin-left: 1rem;
-    width: 60rem;
+    width: 62.vw;
 
 }
 
@@ -355,23 +355,15 @@ main .insights .progress svg circle{
     stroke-width: 14;
     stroke-linecap: round;
     transform: translate(5px, 5px);
+    stroke-dasharray: 226.2; /* Approximately 2 * π * 36 */
+    stroke-dashoffset: 226.2; /* Start with a full circle */
+    transition: stroke-dashoffset 0.6s ease-out;
     
 }
 
-main .insights .sales svg circle{
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
 
-main .insights .expenses svg circle{
-    stroke-dashoffset: 20;
-    stroke-dasharray: 80;
-}
 
-main .insights .income svg circle{
-    stroke-dashoffset: 35;
-    stroke-dasharray: 110;
-}
+
 
 main .insights .progress .number{
     position: absolute;
@@ -394,10 +386,12 @@ main .insights small{
 
 main .recent-cashFlow{
     margin-top: 2rem;
+    
 }
 
 main .recent-cashFlow h2{
     margin-bottom: 0.8rem;
+   
 }
 
 main .recent-cashFlow table{
@@ -409,6 +403,7 @@ main .recent-cashFlow table{
     box-shadow:  var(--box-shadow);
     transition: all 300ms ease;
     color: var(--color-dark);
+    
 }
 
 main .recent-cashFlow table:hover{
@@ -581,14 +576,422 @@ main .recent-cashFlow a{
 
     }
 
-    .right .savings-analytics{
-        position: relative;
-        left: -28rem;
-    }
-
-    .right .top{
-        position: relative;
-        left: -28rem;
-    }
    
+   
+}
+
+/*********************************************************************************************************************************/
+.incAndExp {
+   margin-left: 5vw;
+   justify-content: center;
+   align-items: center;
+  
+   width: 80vw;
+    align-items: center;
+}
+.formContainerInc{
+   
+   display: flex;
+   flex-direction: column;
+   background-color: var(--color-white);
+   width: 55rem;
+   height: 5rem;
+   text-align: center;
+   justify-content: center;
+   box-shadow: var(--box-shadow);
+   border-radius: 1.2rem;
+   margin-left: 15vw;
+   margin-top: 5vh;
+}
+
+.formContainerInc:hover{
+    box-shadow: none;
+}
+
+.formContainerInc input{
+    background: var( --color-background);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: 0;
+    text-align: center;
+    color: var(--color-dark);
+}
+
+.formContainerInc select{
+    background: var( --color-background);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: 0;
+    text-align: center;
+    width: 10rem;
+    color: var(--color-dark);
+}
+
+.formContainerInc button{
+    background-color: #7380ec;
+    color: white;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: transparent;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-left:20px;
+    cursor: pointer;
+
+}
+
+.recentFlow{
+    overflow-y: auto;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    width: 55rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 1.0rem;
+    height: 70vh;
+    color: var(--color-dark);
+    margin-left: 15vw;
+}
+
+
+
+.recentFlow table{
+    margin-left: 0.5vw;
+}
+.recentFlow table tbody td{
+    width: 12rem;
+    padding: 1rem;
+    height: 2.8rem;
+    border-bottom: 1px solid var( --color-background);
+    color: var(--color-dark-variant);
+}
+
+
+
+.deleteBtn {
+    background-color: #ff4d4d; /* Red color for delete button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    background-color: #ff3333; /* Darker red on hover */
+}
+
+.recentFlow::-webkit-scrollbar {
+    width: 10px;
+}
+
+.recentFlow::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-variant); 
+    border-radius: 5px;
+}
+
+.recentFlow::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-dark); 
+}
+
+.recentFlow::-webkit-scrollbar-track {
+    background-color: var(--color-background); 
+}
+
+
+/*********************************************************************************************************************************************/
+
+.accountManagment {
+    margin-left: 0vw;
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.updateInfoContainer {
+    width: 100%; 
+    max-width: 25rem; 
+    height: 25rem;
+    margin-top: 5rem;
+    padding: 1rem; 
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 1.2rem;
+}
+
+.updateInfoContainer h2 {
+    
+    color: #7380ec; /* Match the color to your theme */
+    margin-bottom: 1rem;
+}
+
+.updateInfoContainer form {
+    display: flex;
+    flex-direction: column; /* Keepomg form elements in a column */
+}
+
+.updateInfoContainer input {
+    background: var(--color-background);
+    border: 1px solid #ddd; 
+    margin-top: 1.5rem; /* this is the Space between each input */
+    padding: 0.5rem; 
+    font-size: 1rem; 
+    border-radius: 0.5rem; 
+    outline: none; 
+    color: var(--color-dark);
+}
+.updateInfoContainer button {
+    margin-top: 3rem;
+    padding: 1.5rem 1rem; /* Padding inside the button */
+    background-color: #7380ec; /* Your theme's button color */
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem; /* Rounded corners for the button */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.updateInfoContainer button:hover {
+    background-color: #5a6fb0; /* Darken the button color on hover */
+}
+
+
+.updateInfoContainer:hover {
+    box-shadow: none;
+}
+
+
+
+
+
+
+.updateGoalsContainer {
+    width: 100%; 
+    max-width: 25rem; 
+    height: 25rem;
+    margin-top: 5rem; 
+    margin-left: 2.5rem;
+    padding: 1rem; 
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 1.2rem;
+}
+
+.updateGoalsContainer h2 {
+    
+    color: #7380ec; /* Match the color to your theme */
+    margin-bottom: 2.90rem;
+}
+
+.updateGoalsContainer form {
+    display: flex;
+    flex-direction: column; /* Keepomg form elements in a column */
+}
+
+.updateGoalsContainer input {
+    background: var(--color-background);
+    border: 1px solid #ddd; 
+    margin-top: 1.5rem; /* this is the Space between each input */
+    padding: 0.5rem; 
+    font-size: 1rem; 
+    border-radius: 0.5rem; 
+    outline: none; 
+    color: var(--color-dark);
+}
+.updateGoalsContainer button {
+    margin-top: 5rem;
+    padding: 1.5rem 1rem; /* Padding inside the button */
+    background-color: #7380ec; /* Your theme's button color */
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem; /* Rounded corners for the button */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.updateGoalsContainer button:hover {
+    background-color: #5a6fb0; /* Darken the button color on hover */
+}
+
+
+.updateGoalsContainer:hover {
+    box-shadow: none;
+}
+/***************************************************************************/
+
+.calendarContainer{
+    width: 135%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+
+}
+
+.addBillContainer{
+   position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    width: 54.5rem;
+    height: 4.5rem;
+    text-align: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    border-radius: 1.2rem;
+    margin-left: 15vw;
+    margin-right:5vw;
+    margin-top: 10vh;
+}
+ 
+.addBillContainer:hover{
+    box-shadow: none;
+}
+ 
+.addBillContainer input{
+    background: var( --color-background);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: 0;
+    text-align: center;
+    color: var(--color-dark);
+}
+ 
+.addBillContainer select{
+    color: var(--color-dark-variant);
+    background: var( --color-background);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: 0;
+    text-align: center;
+    width: 10rem;
+}
+ 
+.addBillContainer button{
+    background-color: #7380ec;
+    color: white;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: transparent;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-left:20px;
+    cursor: pointer;
+ 
+}
+
+
+.recentFlowMonthlyBill{
+    position: absolute;
+    text-align: center;
+    margin-top: 25vh;
+    background-color: var(--color-white);
+    width: 35vw;
+    box-shadow: var(--box-shadow);
+    border-radius: 1.0rem;
+    height: 70vh;
+    color: var(--color-dark);
+    margin-left: 5vw;
+}
+
+.recentFlowMonthlyBill h2{
+    margin-top: 0.5vh;
+    margin-bottom: 1.5vh;
+   
+}
+
+
+.recentFlowMonthlyBill table{
+    margin-left: 0.5vw;
+}
+
+
+.recentFlowMonthlyBill table tbody td{
+    width: 12rem;
+    padding: 1rem;
+    height: 2.8rem;
+    border-bottom: 1px solid var( --color-background);
+    color: var(--color-dark-variant);
+}
+
+
+
+.deleteBtn {
+    background-color: #ff4d4d; /* Red color for delete button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    background-color: #ff3333; /* Darker red on hover */
+}
+
+
+.recentFlowBiWeeklyBill{
+    position: absolute;
+    text-align: center;
+    margin-top: 25vh;
+    background-color: var(--color-white);
+    width: 35vw;
+    box-shadow: var(--box-shadow);
+    border-radius: 1.0rem;
+    height: 70vh;
+    color: var(--color-dark);
+    margin-left: 45vw;
+}
+
+.recentFlowBiWeeklyBill h2 {
+    margin-bottom: 1.5vh;
+    margin-top: 0.5vh;
+}
+
+.recentFlowBiWeeklyBill table{
+    margin-left: 0.5vw;
+}
+
+
+.recentFlowBiWeeklyBill table tbody td{
+    width: 12rem;
+    padding: 1rem;
+    height: 2.8rem;
+    border-bottom: 1px solid var( --color-background);
+    color: var(--color-dark-variant);
+}
+
+
+
+.deleteBtn {
+    background-color: #ff4d4d; /* Red color for delete button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    background-color: #ff3333; /* Darker red on hover */
 }

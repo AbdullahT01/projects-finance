@@ -1,0 +1,9 @@
+This is a log of the new concepts I had to learn along the way to face the challenges with building the program: 
+
+
+Challenge 1: (NightMode)
+
+I wanted the program to keep the value of the users nightmode preference, as in if they toggle in it on, then the nighmode will persist even if they log out. 
+
+to achieve this i had to learn how to use express-session. with this i could keep track of the user that logs in and depending on the nigmode value in the sql table i can toggle nightmode on and off when the user 
+loads the main page of the program. 

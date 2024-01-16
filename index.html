@@ -11,24 +11,24 @@
     
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form method="get" action="/signUp">
                 <h1>CREATE ACCOUNT</h1>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="email" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
 
-                <a href="dashboard.html"><button type="button">SIGN UP</button></a>
+                <button type="submit">SIGN UP</button>
 
             </form>
         </div>
 
         <div class="form-container log-in">
-            <form>
+            <form id="loginForm">
                 <h1>LOGIN</h1>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="email" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
            
-                <a href="dashboard.html"><button type="button">LOG IN</button></a>
+                <button type="submit">LOG IN</button>
 
             </form>
         </div>
@@ -56,5 +56,6 @@
     </div>
 
     <script src="login.js"></script>
+    <script src="clientHandling.js"></script>
 </body>
 </html>
